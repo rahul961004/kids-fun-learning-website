@@ -1,0 +1,276 @@
+/*
+ * Global Stylesheet for Fun AI Learning Adventure
+ * Bright, friendly colours and clear typography are used to create
+ * an inviting environment for young learners. Section colours help
+ * orient children and keep the site engaging.
+ */
+
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+/* Navigation */
+header {
+    background-color: #ffaf3f;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f7f1e1;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero-img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-text h2 {
+    font-size: 2.2rem;
+    color: #ff7347;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #3fbf77;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #37a667;
+}
+
+/* Sections */
+.section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ff7347;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Math Game */
+.math-section {
+    background-color: #f0f9ff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.math-game {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007acc;
+}
+
+.answer-input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid #007acc;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.button {
+    background-color: #ffaf3f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #e59d39;
+}
+
+.result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Story Section */
+.story-section {
+    background-color: #fff4ec;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.story-text {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.story-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.story-option-button {
+    background-color: #3fbf77;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.story-option-button:hover {
+    background-color: #359c63;
+}
+
+/* Drawing Section */
+.draw-section {
+    background-color: #eefaea;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.draw-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#drawing-canvas {
+    border: 2px solid #3fbf77;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: crosshair;
+    max-width: 100%;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.parent-note {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero-content {
+        padding-top: 40px;
+    }
+    .hero-img {
+        width: 160px;
+    }
+}
