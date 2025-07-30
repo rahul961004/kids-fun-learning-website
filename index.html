@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun AI Learning Adventure</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Favicon could be added here if desired -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">AI Adventure</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#math">Math Adventure</a></li>
+                <li><a href="#story">Story Time</a></li>
+                <li><a href="#draw">Drawing Studio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <!-- The hero image will be set dynamically via JavaScript to avoid external files -->
+            <img id="hero-img" alt="Friendly Robot" class="hero-img" />
+            <div class="hero-text">
+                <h2>Welcome, Little Explorer!</h2>
+                <p>
+                    Jump into a world of learning and fun. Our AI-powered friend is here
+                    to guide you through games, stories and creative adventures. Let’s
+                    learn and play together!
+                </p>
+                <a href="#math" class="cta-button">Start Your Adventure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Math Adventure Section -->
+    <section id="math" class="section math-section">
+        <h2>Math Adventure</h2>
+        <p>Solve the puzzle! Practice your addition and subtraction with our AI friend.</p>
+        <div class="math-game">
+            <div id="question" class="question"></div>
+            <input type="number" id="answer" class="answer-input" placeholder="Your answer" />
+            <button id="submit-answer" class="button">Check Answer</button>
+            <div id="result" class="result"></div>
+        </div>
+    </section>
+
+    <!-- Story Time Section -->
+    <section id="story" class="section story-section">
+        <h2>Story Time</h2>
+        <p>Choose your path! Help our hero explore a magical world. Your choices shape the story.</p>
+        <div id="story-container" class="story-container">
+            <div id="story-text" class="story-text"></div>
+            <div id="story-options" class="story-options"></div>
+        </div>
+    </section>
+
+    <!-- Drawing Studio Section -->
+    <section id="draw" class="section draw-section">
+        <h2>Drawing Studio</h2>
+        <p>Unleash your creativity! Pick a color and draw whatever you like.</p>
+        <div class="draw-controls">
+            <label for="color-picker">Color:</label>
+            <input type="color" id="color-picker" value="#ff0000" />
+            <label for="brush-size">Brush Size:</label>
+            <input type="range" id="brush-size" min="2" max="30" value="5" />
+            <button id="clear-canvas" class="button">Clear</button>
+        </div>
+        <canvas id="drawing-canvas" width="600" height="400"></canvas>
+    </section>
+
+    <!-- Footer / Parent Zone -->
+    <footer class="footer">
+        <p>
+            © 2025 AI Adventure. This site is designed for kids aged 4‑10 to learn
+            through play. Always explore together with a parent or guardian.
+        </p>
+        <p class="parent-note">
+            Parents: This site captures no data. It’s a fun playground inspired by
+            emerging AI learning ideas【596963423932747†L118-L125】. Encourage your child to explore different
+            activities and talk about what they discover!
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
