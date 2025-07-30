@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing Studio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="drawing">
+    <nav>
+        <h1>Kids Fun</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="math.html">Math Adventure</a></li>
+            <li><a href="story.html">Story Adventure</a></li>
+            <li><a href="drawing.html">Drawing Studio</a></li>
+            <li><a href="report.html">Parent Report</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h2>Drawing Studio</h2>
+        <p>Unleash your creativity with colors and brushes!</p>
+    </section>
+    <div class="container">
+        <label for="color-picker">Color:</label>
+        <input type="color" id="color-picker" value="#ff0000" class="color-picker" />
+        <label for="brush-size">Brush Size:</label>
+        <input type="range" id="brush-size" min="2" max="30" value="5" class="brush-size" />
+        <button id="clear-canvas" class="btn">Clear</button>
+        <canvas id="drawing-canvas" width="600" height="400"></canvas>
+    </div>
+    <footer class="footer">
+        <p>© 2025 Kids Fun Learning Adventures. Express yourself through art!</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', initDrawingPage);
+    </script>
+</body>
+</html>

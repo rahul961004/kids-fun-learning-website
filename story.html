@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Adventure</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="story">
+    <nav>
+        <h1>Kids Fun</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="math.html">Math Adventure</a></li>
+            <li><a href="story.html">Story Adventure</a></li>
+            <li><a href="drawing.html">Drawing Studio</a></li>
+            <li><a href="report.html">Parent Report</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h2>Story Adventure</h2>
+        <p>Choose your path in our magical story!</p>
+    </section>
+    <div class="container">
+        <div class="story-choices">
+            <img id="story-img-left" class="story-image" alt="Friendly Dragon" />
+            <img id="story-img-right" class="story-image" alt="Gentle River" />
+        </div>
+        <div id="story-text"></div>
+        <div id="story-options"></div>
+    </div>
+    <footer class="footer">
+        <p>© 2025 Kids Fun Learning Adventures. Let imagination guide the way!</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', initStoryPage);
+    </script>
+</body>
+</html>

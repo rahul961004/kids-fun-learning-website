@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Adventure</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="math">
+    <nav>
+        <h1>Kids Fun</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="math.html">Math Adventure</a></li>
+            <li><a href="story.html">Story Adventure</a></li>
+            <li><a href="drawing.html">Drawing Studio</a></li>
+            <li><a href="report.html">Parent Report</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <img id="hero-img" alt="Math fun" />
+        <h2>Math Adventure</h2>
+        <p>Solve random addition and subtraction problems to sharpen your skills!</p>
+    </section>
+    <div class="container">
+        <div id="math-game">
+            <div id="math-question"></div>
+            <input type="number" id="math-answer" placeholder="Your answer" />
+            <button class="btn" id="math-submit">Check Answer</button>
+            <div id="math-result"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>© 2025 Kids Fun Learning Adventures. Practice makes perfect!</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', initMathPage);
+    </script>
+</body>
+</html>
