@@ -46,7 +46,8 @@ function initHomePage() {
   const heroEl = document.getElementById('hero-img');
   // Assign our friendly robot illustration
   if (heroEl) {
-    heroEl.src = 'images/hero_robot.png';
+    // Images reside at the repository root on GitHub Pages, so drop the images/ prefix
+    heroEl.src = 'hero_robot.png';
   }
 }
 
@@ -93,8 +94,9 @@ function initStoryPage() {
   const imgLeft = document.getElementById('story-img-left');
   const imgRight = document.getElementById('story-img-right');
   // Load friendly dragon and river illustrations
-  if (imgLeft) imgLeft.src = 'images/dragon.png';
-  if (imgRight) imgRight.src = 'images/river.png';
+  // Images reside at the repository root on GitHub Pages, so drop the images/ prefix
+  if (imgLeft) imgLeft.src = 'dragon.png';
+  if (imgRight) imgRight.src = 'river.png';
   const textEl = document.getElementById('story-text');
   const optionsEl = document.getElementById('story-options');
   // Story nodes define each part of the choose‑your‑own‑adventure

@@ -116,6 +116,21 @@ nav a[aria-current="page"] {
   width: 70%;
   display: block;
   margin: 0 auto;
+  /* Make the hero illustrations gently float to add a sense of magic */
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animated floating effect for hero illustrations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Buttons */
@@ -275,22 +290,45 @@ input[type="range"] {
 /* Page specific backgrounds */
 body.home {
   background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
 }
 
 body.math {
   background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
 }
 
 body.story {
   background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
 }
 
 body.drawing {
   background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
 }
 
 body.report {
   background: linear-gradient(135deg, #EDE7F6 0%, #D1C4E9 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Animate background gradients to create a dynamic, futuristic feel */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Responsive adjustments */
