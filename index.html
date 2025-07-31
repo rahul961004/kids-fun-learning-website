@@ -1,38 +1,76 @@
 <!DOCTYPE html>
+<!--
+  Updated home page for the Kids Fun Learning Adventures site.
+
+  This version refines the layout and styling to make the
+  experience more engaging for young learners. It incorporates
+  research‑driven UX principles such as bright colours, large
+  typography, generous white space and friendly illustrations【60524424161455†L155-L164】.  
+  The content is organised into two columns on larger screens so
+  that the hero illustration and welcome text sit side by side.
+-->
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kids Fun Learning Adventures</title>
+    <!-- Import a playful font for headings and body text -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body class="home">
-    <!-- Navigation -->
+  </head>
+  <body class="home">
+    <!-- Primary navigation -->
     <nav>
-        <h1>Kids Fun</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="math.html">Math Adventure</a></li>
-            <li><a href="story.html">Story Adventure</a></li>
-            <li><a href="drawing.html">Drawing Studio</a></li>
-            <li><a href="report.html">Parent Report</a></li>
-        </ul>
+      <h1>Kids Fun</h1>
+      <ul>
+        <li><a href="index.html" aria-label="Go to the home page">Home</a></li>
+        <li><a href="math.html" aria-label="Go to the math adventure">Math</a></li>
+        <li><a href="story.html" aria-label="Go to the story adventure">Story</a></li>
+        <li><a href="drawing.html" aria-label="Go to the drawing studio">Drawing</a></li>
+        <li><a href="report.html" aria-label="Go to the parent report">Report</a></li>
+      </ul>
     </nav>
+    <!-- Hero section introduces the site with a friendly robot illustration -->
     <section class="hero">
-        <img id="hero-img" alt="Friendly Robot" />
-        <h2>Welcome, Little Explorer!</h2>
-        <p>Join our fun adventures! Play math games, choose your own story, draw freely and discover your talents.</p>
-        <a href="math.html" class="btn">Start Math Adventure</a>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Welcome, Little Explorer!</h2>
+          <p>
+            Join our fun adventures! Play math games, choose your own story,
+            draw freely and discover your talents.
+          </p>
+          <a href="math.html" class="btn">Start Math Adventure</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="images/hero_robot.png"
+            alt="Friendly robot waving hello"
+            id="hero-img"
+          />
+        </div>
+      </div>
     </section>
-    <div class="container">
-        <p>This website is designed by experienced childhood educators to support learning through play. Each section offers a different way to learn and grow. Use the navigation above to explore!</p>
+    <!-- Introductory text about the purpose of the site -->
+    <div class="container intro">
+      <p>
+        This website is designed by experienced childhood educators to support
+        learning through play. Each section offers a different way to learn and
+        grow. Use the navigation above to explore!
+      </p>
     </div>
     <footer class="footer">
-        <p>© 2025 Kids Fun Learning Adventures. Designed for children aged 4‑10. Please explore together with a parent or guardian.</p>
+      <p>
+        © 2025 Kids Fun Learning Adventures. Designed for children aged 4‑10.
+        Please explore together with a parent or guardian.
+      </p>
     </footer>
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', initHomePage);
+      document.addEventListener("DOMContentLoaded", initHomePage);
     </script>
-</body>
+  </body>
 </html>

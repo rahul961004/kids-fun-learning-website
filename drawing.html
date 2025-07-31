@@ -1,40 +1,76 @@
 <!DOCTYPE html>
+<!--
+  Updated drawing studio page. A cheerful easel illustration welcomes
+  children and sets the tone for creativity. Controls for colour and
+  brush size are arranged neatly with plenty of space, and the
+  drawing canvas sits below. A clear button allows erasing the
+  artwork. The page uses a warm colour palette to encourage
+  expression【505690382823338†L149-L167】.
+-->
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drawing Studio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body class="drawing">
+  </head>
+  <body class="drawing">
     <nav>
-        <h1>Kids Fun</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="math.html">Math Adventure</a></li>
-            <li><a href="story.html">Story Adventure</a></li>
-            <li><a href="drawing.html">Drawing Studio</a></li>
-            <li><a href="report.html">Parent Report</a></li>
-        </ul>
+      <h1>Kids Fun</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="math.html">Math</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="drawing.html" aria-current="page">Drawing</a></li>
+        <li><a href="report.html">Report</a></li>
+      </ul>
     </nav>
     <section class="hero">
-        <h2>Drawing Studio</h2>
-        <p>Unleash your creativity with colors and brushes!</p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Drawing Studio</h2>
+          <p>Unleash your creativity with colours and brushes!</p>
+        </div>
+        <div class="hero-image">
+          <img src="images/easel.png" alt="Easel with smiling canvas" />
+        </div>
+      </div>
     </section>
     <div class="container">
-        <label for="color-picker">Color:</label>
-        <input type="color" id="color-picker" value="#ff0000" class="color-picker" />
+      <div class="drawing-controls">
+        <label for="color-picker">Colour:</label>
+        <input
+          type="color"
+          id="color-picker"
+          value="#ff0000"
+          class="color-picker"
+        />
         <label for="brush-size">Brush Size:</label>
-        <input type="range" id="brush-size" min="2" max="30" value="5" class="brush-size" />
+        <input
+          type="range"
+          id="brush-size"
+          min="2"
+          max="30"
+          value="5"
+          class="brush-size"
+        />
         <button id="clear-canvas" class="btn">Clear</button>
-        <canvas id="drawing-canvas" width="600" height="400"></canvas>
+      </div>
+      <canvas id="drawing-canvas" width="600" height="400"></canvas>
     </div>
     <footer class="footer">
-        <p>© 2025 Kids Fun Learning Adventures. Express yourself through art!</p>
+      <p>
+        © 2025 Kids Fun Learning Adventures. Express yourself through art!
+      </p>
     </footer>
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', initDrawingPage);
+      document.addEventListener("DOMContentLoaded", initDrawingPage);
     </script>
-</body>
+  </body>
 </html>

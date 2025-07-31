@@ -1,40 +1,72 @@
 <!DOCTYPE html>
+<!--
+  Updated story adventure page. Children choose between two
+  illustrated paths — a friendly dragon and a gentle river. The
+  narrative is built in JavaScript, but the images are placed
+  directly here to ensure they are visible even before the JS
+  executes. Bright colours and simple shapes reinforce a happy
+  mood【505690382823338†L149-L167】.
+-->
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Story Adventure</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body class="story">
+  </head>
+  <body class="story">
     <nav>
-        <h1>Kids Fun</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="math.html">Math Adventure</a></li>
-            <li><a href="story.html">Story Adventure</a></li>
-            <li><a href="drawing.html">Drawing Studio</a></li>
-            <li><a href="report.html">Parent Report</a></li>
-        </ul>
+      <h1>Kids Fun</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="math.html">Math</a></li>
+        <li><a href="story.html" aria-current="page">Story</a></li>
+        <li><a href="drawing.html">Drawing</a></li>
+        <li><a href="report.html">Report</a></li>
+      </ul>
     </nav>
     <section class="hero">
-        <h2>Story Adventure</h2>
-        <p>Choose your path in our magical story!</p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Story Adventure</h2>
+          <p>Choose your path in our magical story!</p>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero_robot.png" alt="Story robot mascot" />
+        </div>
+      </div>
     </section>
     <div class="container">
-        <div class="story-choices">
-            <img id="story-img-left" class="story-image" alt="Friendly Dragon" />
-            <img id="story-img-right" class="story-image" alt="Gentle River" />
-        </div>
-        <div id="story-text"></div>
-        <div id="story-options"></div>
+      <div class="story-choices">
+        <img
+          id="story-img-left"
+          class="story-image"
+          src="images/dragon.png"
+          alt="Friendly dragon"
+        />
+        <img
+          id="story-img-right"
+          class="story-image"
+          src="images/river.png"
+          alt="Gentle river"
+        />
+      </div>
+      <div id="story-text" class="story-text"></div>
+      <div id="story-options" class="story-options"></div>
     </div>
     <footer class="footer">
-        <p>© 2025 Kids Fun Learning Adventures. Let imagination guide the way!</p>
+      <p>
+        © 2025 Kids Fun Learning Adventures. Let imagination guide the way!
+      </p>
     </footer>
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', initStoryPage);
+      document.addEventListener("DOMContentLoaded", initStoryPage);
     </script>
-</body>
+  </body>
 </html>

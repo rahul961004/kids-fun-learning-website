@@ -1,41 +1,67 @@
 <!DOCTYPE html>
+<!--
+  Updated math adventure page. The layout is consistent with the
+  home page: a header, hero section with illustration and a
+  two‑column layout on larger screens, and the interactive
+  arithmetic game below. Bright colours and large buttons
+  encourage engagement【505690382823338†L116-L135】.
+-->
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Math Adventure</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body class="math">
+  </head>
+  <body class="math">
     <nav>
-        <h1>Kids Fun</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="math.html">Math Adventure</a></li>
-            <li><a href="story.html">Story Adventure</a></li>
-            <li><a href="drawing.html">Drawing Studio</a></li>
-            <li><a href="report.html">Parent Report</a></li>
-        </ul>
+      <h1>Kids Fun</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="math.html" aria-current="page">Math</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="drawing.html">Drawing</a></li>
+        <li><a href="report.html">Report</a></li>
+      </ul>
     </nav>
     <section class="hero">
-        <img id="hero-img" alt="Math fun" />
-        <h2>Math Adventure</h2>
-        <p>Solve random addition and subtraction problems to sharpen your skills!</p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Math Adventure</h2>
+          <p>
+            Solve random addition and subtraction problems to sharpen your
+            skills!
+          </p>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero_robot.png" alt="Robot learning math" />
+        </div>
+      </div>
     </section>
     <div class="container">
-        <div id="math-game">
-            <div id="math-question"></div>
-            <input type="number" id="math-answer" placeholder="Your answer" />
-            <button class="btn" id="math-submit">Check Answer</button>
-            <div id="math-result"></div>
-        </div>
+      <div id="math-game" class="card">
+        <div id="math-question"></div>
+        <input
+          type="number"
+          id="math-answer"
+          placeholder="Your answer"
+          aria-label="Enter your answer"
+        />
+        <button class="btn" id="math-submit">Check Answer</button>
+        <div id="math-result" class="result-message"></div>
+      </div>
     </div>
     <footer class="footer">
-        <p>© 2025 Kids Fun Learning Adventures. Practice makes perfect!</p>
+      <p>© 2025 Kids Fun Learning Adventures. Practice makes perfect!</p>
     </footer>
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', initMathPage);
+      document.addEventListener("DOMContentLoaded", initMathPage);
     </script>
-</body>
+  </body>
 </html>
