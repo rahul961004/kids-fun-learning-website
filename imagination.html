@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+  Imagination Explorer page for the Kids Fun Learning Adventures site.
+
+  This page invites children to explore their imagination by creating
+  custom stories. They can choose a character, a setting and an
+  activity; the site will then generate a fun story for them. The
+  design follows the same playful aesthetic as the rest of the site,
+  with bright colours, friendly illustrations and large interactive
+  cards. Metrics are recorded to help parents understand their
+  child’s preferences.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagination Explorer – Kids Fun</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="imagination">
+    <!-- Primary navigation -->
+    <nav>
+      <h1>Kids Fun</h1>
+      <ul>
+        <li><a href="index.html" aria-label="Go to the home page">Home</a></li>
+        <li><a href="math.html" aria-label="Go to the math adventure">Math</a></li>
+        <li><a href="story.html" aria-label="Go to the story adventure">Story</a></li>
+        <li><a href="drawing.html" aria-label="Go to the drawing studio">Drawing</a></li>
+        <li><a href="imagination.html" aria-current="page" aria-label="Go to the imagination explorer">Imagination</a></li>
+        <li><a href="report.html" aria-label="Go to the parent report">Report</a></li>
+      </ul>
+    </nav>
+    <!-- Hero section for imagination explorer -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Imagination Explorer</h2>
+          <p>
+            Choose a character, setting and activity to create your own
+            magical story. What will your imagination dream up today?
+          </p>
+        </div>
+        <div class="hero-image">
+          <img
+            src="imagination_hero.png"
+            alt="Imagination explorer illustration"
+            id="imagination-hero-img"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Selection interface -->
+    <div class="container">
+      <div class="options-section">
+        <h3>Choose a character</h3>
+        <div class="option-grid">
+          <div class="option-card character-option" data-value="dragon">
+            <img src="dragon.png" alt="Dragon character" />
+            <p>Dragon</p>
+          </div>
+          <div class="option-card character-option" data-value="robot">
+            <img src="hero_robot.png" alt="Robot character" />
+            <p>Robot</p>
+          </div>
+          <div class="option-card character-option" data-value="unicorn">
+            <img src="unicorn.png" alt="Unicorn character" />
+            <p>Unicorn</p>
+          </div>
+        </div>
+      </div>
+      <div class="options-section">
+        <h3>Choose a setting</h3>
+        <div class="option-grid">
+          <div class="option-card setting-option" data-value="forest">
+            <img src="river.png" alt="Forest setting" />
+            <p>Forest</p>
+          </div>
+          <div class="option-card setting-option" data-value="space">
+            <img src="spaceship.png" alt="Space setting" />
+            <p>Space</p>
+          </div>
+          <div class="option-card setting-option" data-value="castle">
+            <img src="castle.png" alt="Castle setting" />
+            <p>Castle</p>
+          </div>
+        </div>
+      </div>
+      <div class="options-section">
+        <h3>Choose an activity</h3>
+        <div class="option-grid">
+          <div class="option-card activity-option" data-value="exploring">
+            <img src="river.png" alt="Exploring activity" />
+            <p>Exploring</p>
+          </div>
+          <div class="option-card activity-option" data-value="singing">
+            <img src="dragon.png" alt="Singing activity" />
+            <p>Singing</p>
+          </div>
+          <div class="option-card activity-option" data-value="dancing">
+            <img src="hero_robot.png" alt="Dancing activity" />
+            <p>Dancing</p>
+          </div>
+          <div class="option-card activity-option" data-value="cooking">
+            <img src="easel.png" alt="Cooking activity" />
+            <p>Cooking</p>
+          </div>
+          <div class="option-card activity-option" data-value="painting">
+            <img src="easel.png" alt="Painting activity" />
+            <p>Painting</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <button id="generate-story-btn" class="btn">Generate Story</button>
+        <div id="generated-story"></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>
+        © 2025 Kids Fun Learning Adventures. Designed for children aged 4‑10.
+        Let your imagination soar!
+      </p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', initImaginationPage);
+    </script>
+  </body>
+</html>

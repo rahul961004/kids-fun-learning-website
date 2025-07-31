@@ -243,6 +243,8 @@ async function initReportPage() {
   html += `<tr><td>Story</td><td>River choices</td><td>${metrics.storyRiver || 0}</td></tr>`;
   html += `<tr><td>Drawing</td><td>Strokes</td><td>${metrics.drawingStrokes || 0}</td></tr>`;
   html += `<tr><td>Drawing</td><td>Minutes</td><td>${Math.round((metrics.drawingTime || 0) / 60)}</td></tr>`;
+  // Imagination metrics
+  html += `<tr><td>Imagination</td><td>Stories</td><td>${metrics.imaginationStories || 0}</td></tr>`;
   html += '</tbody></table>';
   // Suggestions based on metrics
   const suggestions = [];
@@ -266,6 +268,22 @@ async function initReportPage() {
     suggestions.push('Your child loves drawing! Provide diverse art materials to nurture creativity.');
   } else {
     suggestions.push('Encourage your child to spend more time drawing to develop fine motor skills.');
+  }
+  // Suggestions based on imagination choices
+  const charCounts = {
+    dragon: metrics.imaginationCharacter_dragon || 0,
+    robot: metrics.imaginationCharacter_robot || 0,
+    unicorn: metrics.imaginationCharacter_unicorn || 0,
+  };
+  const maxChar = Object.keys(charCounts).reduce((a, b) => (charCounts[a] > charCounts[b] ? a : b));
+  if (metrics.imaginationStories) {
+    if (maxChar === 'unicorn') {
+      suggestions.push('Your child enjoys magical creatures. Offer fantasy books and imaginative play.');
+    } else if (maxChar === 'dragon') {
+      suggestions.push('Your child loves adventure and mythical beings. Encourage storytelling and creative games.');
+    } else if (maxChar === 'robot') {
+      suggestions.push('Your child is drawn to robots and technology. Explore STEM toys and science activities.');
+    }
   }
   html += '<h3>Suggestions</h3><ul>' + suggestions.map((s) => `<li>${s}</li>`).join('') + '</ul>';
   container.innerHTML = html;
@@ -324,9 +342,76 @@ async function initReportPage() {
   }
 }
 
+// Imagination Explorer
+function initImaginationPage() {
+  // Elements for selections
+  const charCards = document.querySelectorAll('.character-option');
+  const settingCards = document.querySelectorAll('.setting-option');
+  const activityCards = document.querySelectorAll('.activity-option');
+  const generateBtn = document.getElementById('generate-story-btn');
+  const storyOut = document.getElementById('generated-story');
+  let selectedCharacter = null;
+  let selectedSetting = null;
+  let selectedActivity = null;
+  function selectCard(cards, target) {
+    cards.forEach((c) => c.classList.remove('selected'));
+    target.classList.add('selected');
+  }
+  charCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      selectCard(charCards, card);
+      selectedCharacter = card.dataset.value;
+    });
+  });
+  settingCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      selectCard(settingCards, card);
+      selectedSetting = card.dataset.value;
+    });
+  });
+  activityCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      selectCard(activityCards, card);
+      selectedActivity = card.dataset.value;
+    });
+  });
+  generateBtn.addEventListener('click', () => {
+    if (!selectedCharacter || !selectedSetting || !selectedActivity) {
+      alert('Please choose a character, setting and activity first!');
+      return;
+    }
+    // Record metrics for selections
+    const metrics = loadMetrics();
+    const charKey = `imaginationCharacter_${selectedCharacter}`;
+    const settingKey = `imaginationSetting_${selectedSetting}`;
+    const activityKey = `imaginationActivity_${selectedActivity}`;
+    metrics[charKey] = (metrics[charKey] || 0) + 1;
+    metrics[settingKey] = (metrics[settingKey] || 0) + 1;
+    metrics[activityKey] = (metrics[activityKey] || 0) + 1;
+    metrics.imaginationStories = (metrics.imaginationStories || 0) + 1;
+    saveMetrics(metrics);
+    // Build a simple story from selections
+    const charNames = { dragon: 'dragon', robot: 'robot', unicorn: 'unicorn' };
+    const settingNames = { forest: 'forest', space: 'space', castle: 'castle' };
+    const activityNames = {
+      exploring: 'exploring',
+      singing: 'singing',
+      dancing: 'dancing',
+      cooking: 'cooking',
+      painting: 'painting',
+    };
+    const charName = charNames[selectedCharacter] || selectedCharacter;
+    const settingName = settingNames[selectedSetting] || selectedSetting;
+    const activityName = activityNames[selectedActivity] || selectedActivity;
+    const story = `Once upon a time, a friendly ${charName} went to the ${settingName}. There, the ${charName} loved ${activityName} and made many new friends. The end.`;
+    storyOut.textContent = story;
+  });
+}
+
 // Expose functions globally so that inline scripts in HTML can call them
 window.initHomePage = initHomePage;
 window.initMathPage = initMathPage;
 window.initStoryPage = initStoryPage;
 window.initDrawingPage = initDrawingPage;
 window.initReportPage = initReportPage;
+window.initImaginationPage = initImaginationPage;
