@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Math Adventure – Kids Fun</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Math Adventure – Kids Fun Learning Adventures</title>
+    <!-- Use the global stylesheet -->
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
+  <body data-page="math">
     <header>
-      <h1>Kids Fun Learning Adventures</h1>
+      <h1>Kids Fun Learning Adventures</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -20,28 +21,29 @@
         </ul>
       </nav>
     </header>
-    <main class="container">
+    <main class="activity-container">
       <h2>Math Adventure</h2>
-      <p>Solve random problems to sharpen your skills!</p>
-      <label for="difficulty">Choose difficulty:</label>
-      <select id="difficulty">
+      <p>Solve random problems to sharpen your skills! Count the stars to find the answer and see numbers come to life.</p>
+      <label for="math-difficulty">Choose difficulty:</label>
+      <select id="math-difficulty">
         <option value="easy">Easy (0–10)</option>
-        <option value="medium">Medium (0–50)</option>
-        <option value="hard">Hard (0–100)</option>
+        <option value="medium">Medium (0–20)</option>
+        <option value="hard">Hard (0–50)</option>
       </select>
-      <div id="math-question" class="question"></div>
+      <div id="visual-question"></div>
+      <div id="math-question" style="font-size:1.5rem;margin:1rem 0;">Loading...</div>
       <input type="number" id="math-answer" placeholder="Your answer…" />
-      <button id="math-submit" class="btn-primary">Check Answer</button>
-      <div id="math-result" class="result"></div>
+      <button id="math-check">Check Answer</button>
+      <div id="math-feedback" style="margin-top:0.5rem;"></div>
       <div class="scoreboard">
-        <span>Correct: <span id="score-correct">0</span></span>
-        <span>Attempts: <span id="score-attempts">0</span></span>
+        <p>Correct: <span id="math-correct">0</span></p>
+        <p>Attempts: <span id="math-attempts">0</span></p>
       </div>
     </main>
-    <footer class="footer">
+    <footer>
       © 2025 Kids Fun Learning Adventures. Practice makes perfect!
     </footer>
-    <!-- Append a query string to the script to bypass aggressive caching on GitHub Pages -->
-    <script src="script.js?v=2"></script>
+    <!-- Load main script -->
+    <script src="scripts/main.js"></script>
   </body>
 </html>

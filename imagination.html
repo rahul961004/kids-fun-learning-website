@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imagination Explorer – Kids Fun</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Imagination Explorer – Kids Fun Learning Adventures</title>
+    <!-- Use the global stylesheet -->
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
+  <body data-page="imagination">
     <header>
-      <h1>Kids Fun Learning Adventures</h1>
+      <h1>Kids Fun Learning Adventures</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -20,49 +21,38 @@
         </ul>
       </nav>
     </header>
-    <main class="container">
+    <main class="activity-container">
       <h2>Imagination Explorer</h2>
-      <p>
-        Choose a character, setting and activity to create your own magical
-        story. What will your imagination dream up today?
-      </p>
-      <div class="options-group">
-        <h3>Choose a character</h3>
-        <div class="options characters">
-          <div class="card character-option" data-value="dragon">Dragon</div>
-          <div class="card character-option" data-value="robot">Robot</div>
-          <div class="card character-option" data-value="unicorn">Unicorn</div>
-          <div class="card character-option" data-value="fairy">Fairy</div>
-        </div>
+      <p>Choose a character, setting and activity to create your own magical story. What will your imagination dream up today?</p>
+      <h3>Choose a character</h3>
+      <div class="story-options">
+        <button data-char="Dragon">Dragon</button>
+        <button data-char="Robot">Robot</button>
+        <button data-char="Unicorn">Unicorn</button>
+        <button data-char="Fairy">Fairy</button>
       </div>
-      <div class="options-group">
-        <h3>Choose a setting</h3>
-        <div class="options settings">
-          <div class="card setting-option" data-value="forest">Forest</div>
-          <div class="card setting-option" data-value="space">Space</div>
-          <div class="card setting-option" data-value="castle">Castle</div>
-          <div class="card setting-option" data-value="ocean">Ocean</div>
-        </div>
+      <h3>Choose a setting</h3>
+      <div class="story-options">
+        <button data-setting="Forest">Forest</button>
+        <button data-setting="Space">Space</button>
+        <button data-setting="Castle">Castle</button>
+        <button data-setting="Ocean">Ocean</button>
       </div>
-      <div class="options-group">
-        <h3>Choose an activity</h3>
-        <div class="options activities">
-          <div class="card activity-option" data-value="exploring">Exploring</div>
-          <div class="card activity-option" data-value="singing">Singing</div>
-          <div class="card activity-option" data-value="dancing">Dancing</div>
-          <div class="card activity-option" data-value="cooking">Cooking</div>
-          <div class="card activity-option" data-value="painting">Painting</div>
-        </div>
+      <h3>Choose an activity</h3>
+      <div class="story-options">
+        <button data-activity="Exploring">Exploring</button>
+        <button data-activity="Singing">Singing</button>
+        <button data-activity="Dancing">Dancing</button>
+        <button data-activity="Cooking">Cooking</button>
+        <button data-activity="Painting">Painting</button>
       </div>
-      <p>
-        <button id="generate-story-btn" class="btn-primary">Generate Story</button>
-      </p>
-      <p id="generated-story" class="result"></p>
+      <button id="imagination-generate">Generate Story</button>
+      <p id="imagination-story" class="story-output"></p>
     </main>
-    <footer class="footer">
+    <footer>
       © 2025 Kids Fun Learning Adventures. Let your imagination soar!
     </footer>
-    <!-- Append a query string to the script to bypass aggressive caching on GitHub Pages -->
-    <script src="script.js?v=2"></script>
+    <!-- Load main script -->
+    <script src="scripts/main.js"></script>
   </body>
 </html>

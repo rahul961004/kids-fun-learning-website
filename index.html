@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kids Fun Learning Adventures</title>
+    <!-- Use stylesheet from styles folder -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body data-page="home">
@@ -12,11 +13,11 @@
       <nav>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="pages/math.html">Math</a></li>
-          <li><a href="pages/story.html">Story</a></li>
-          <li><a href="pages/drawing.html">Drawing</a></li>
-          <li><a href="pages/imagination.html">Imagination</a></li>
-          <li><a href="pages/report.html">Report</a></li>
+          <li><a href="math.html">Math</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="drawing.html">Drawing</a></li>
+          <li><a href="imagination.html">Imagination</a></li>
+          <li><a href="report.html">Report</a></li>
         </ul>
       </nav>
     </header>
@@ -30,38 +31,39 @@
             never been so much fun!
           </p>
           <p>
-            <a href="pages/math.html" class="btn-primary">Start Math Adventure</a>
+            <a href="math.html" class="btn-primary">Start Math Adventure</a>
           </p>
         </div>
-        <img src="hero.png" alt="Imaginative illustration of playful robots and dragons" />
+        <img src="assets/hero.png" alt="Imaginative illustration of playful robots and dragons" />
       </section>
       <section class="features">
-        <div class="card">
-          <img src="math_icon.png" alt="Math icon" />
+        <a class="card" href="math.html">
+          <img src="assets/math_icon.png" alt="Math icon" />
           <h3>Math Adventure</h3>
           <p>Solve addition, subtraction and more. Earn stars for every correct answer!</p>
-        </div>
-        <div class="card">
-          <img src="story_icon.png" alt="Story icon" />
+        </a>
+        <a class="card" href="story.html">
+          <img src="assets/story_icon.png" alt="Story icon" />
           <h3>Story Adventure</h3>
           <p>Choose your own path through a magical tale. Where will your choices lead?</p>
-        </div>
-        <div class="card">
-          <img src="drawing_icon.png" alt="Drawing icon" />
+        </a>
+        <a class="card" href="drawing.html">
+          <img src="assets/drawing_icon.png" alt="Drawing icon" />
           <h3>Drawing Studio</h3>
           <p>Pick colours and brushes, create art, then download your masterpiece.</p>
-        </div>
-        <div class="card">
-          <img src="imagination_icon.png" alt="Imagination icon" />
+        </a>
+        <a class="card" href="imagination.html">
+          <img src="assets/imagination_icon.png" alt="Imagination icon" />
           <h3>Imagination Explorer</h3>
           <p>Mix and match characters, settings and activities to craft your own story.</p>
-        </div>
+        </a>
       </section>
     </main>
     <footer>
       © 2025 Kids Fun Learning Adventures. Designed for children aged 4‑10.
       Please explore together with a parent or guardian.
     </footer>
+    <!-- Load script from scripts folder -->
     <script src="scripts/main.js"></script>
   </body>
 </html>

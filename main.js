@@ -34,6 +34,13 @@ function saveMetrics(metrics) {
   localStorage.setItem('kfl_metrics', JSON.stringify(metrics));
 }
 
+// Define the OpenAI API key.  If you have configured an environment
+// variable or global via a separate script, it will be picked up from
+// `window.OPENAI_API_KEY`.  Otherwise replace the empty string below
+// with your actual key.  Exposing a key on the client is not ideal,
+// but this project operates entirely on the client side.
+const OPENAI_API_KEY = window && window.OPENAI_API_KEY ? window.OPENAI_API_KEY : '';
+
 // Initialise the correct module based on the page
 window.addEventListener('DOMContentLoaded', () => {
   const page = document.body.dataset.page;
@@ -169,7 +176,8 @@ function initDrawingPage() {
   const downloadBtn = document.getElementById('download-btn');
   const uploadInput = document.getElementById('upload-input');
   const generateBtn = document.getElementById('generate-btn');
-  const apiKeyInput = document.getElementById('ai-key');
+  // We no longer require the user to input an API key.  The key is
+  // provided via the global constant OPENAI_API_KEY.  See top of file.
   const resultImg = document.getElementById('ai-result');
   const feedback = document.getElementById('ai-feedback');
 
@@ -232,10 +240,11 @@ function initDrawingPage() {
   }
 
   generateBtn.addEventListener('click', async () => {
-    const apiKey = apiKeyInput.value.trim();
+    // Use the global API key constant; if it is empty we'll display an error.
+    const apiKey = OPENAI_API_KEY;
     if (!apiKey) {
       feedback.style.color = 'red';
-      feedback.textContent = 'Please enter your OpenAI API key.';
+      feedback.textContent = 'OpenAI API key is not configured.';
       return;
     }
     feedback.style.color = 'black';
@@ -336,29 +345,47 @@ function initStoryPage() {
   const section = document.getElementById('story-builder');
   const storyOut = document.getElementById('story-text');
   const storyImg = document.getElementById('story-image');
-  const apiKeyInput = document.getElementById('story-api-key');
+  // We no longer display an input for the API key.  The key is
+  // provided via the global OPENAI_API_KEY constant.
   const feedback = document.getElementById('story-feedback');
   // Steps definitions
+  // Define the story building steps.  We provide a wider range of choices
+  // so that every story feels fresh and tailored to the child’s selections.
   const steps = [
     {
       question: 'Choose a hero for your comic adventure:',
-      options: ['Dragon', 'Robot', 'Unicorn', 'Fairy'],
+      options: ['Dragon', 'Robot', 'Unicorn', 'Fairy', 'Pirate', 'Astronaut'],
       key: 'hero'
     },
     {
       question: 'Pick a sidekick to join the hero:',
-      options: ['Puppy', 'Kitten', 'Dinosaur', 'Alien'],
+      options: ['Puppy', 'Kitten', 'Dinosaur', 'Alien', 'Turtle', 'Elf'],
       key: 'sidekick'
     },
     {
       question: 'Where will the adventure take place?',
-      options: ['Forest', 'Space', 'Castle', 'Ocean'],
+      options: ['Forest', 'Space', 'Castle', 'Ocean', 'Jungle', 'Snowy mountain'],
       key: 'setting'
     },
     {
       question: 'What is the mission?',
-      options: ['Rescue a friend', 'Find treasure', 'Explore a cave', 'Throw a party'],
+      options: ['Rescue a friend', 'Find treasure', 'Explore a cave', 'Throw a party', 'Solve a mystery', 'Build a spaceship'],
       key: 'mission'
+    },
+    {
+      question: 'Choose the tone of the story:',
+      options: ['Silly', 'Adventurous', 'Mysterious', 'Funny', 'Spooky', 'Magical'],
+      key: 'tone'
+    },
+    {
+      question: 'Select an antagonist to overcome:',
+      options: ['Wizard', 'Pirate', 'Robot', 'Giant', 'Ghost', 'Witch'],
+      key: 'villain'
+    },
+    {
+      question: 'Pick a special item to help on the journey:',
+      options: ['Magic wand', 'Treasure map', 'Time machine', 'Flying carpet', 'Invisible cloak', 'Robot assistant'],
+      key: 'item'
     }
   ];
   let selections = {};
@@ -391,15 +418,20 @@ function initStoryPage() {
   }
 
   async function generateComic() {
-    const apiKey = apiKeyInput.value.trim();
+    // Retrieve the API key from the global constant.  Show an error if
+    // it has not been configured.
+    const apiKey = OPENAI_API_KEY;
     if (!apiKey) {
       feedback.style.color = 'red';
-      feedback.textContent = 'Please enter your OpenAI API key to generate your comic.';
+      feedback.textContent = 'OpenAI API key is not configured.';
       return;
     }
     feedback.style.color = 'black';
     feedback.textContent = 'Creating your comic...';
-    const prompt = `Create a short children\'s comic story (around 150 words) featuring a ${selections.hero} and a ${selections.sidekick} who go on a mission to ${selections.mission.toLowerCase()} in a ${selections.setting.toLowerCase()}. Write in a fun, conversational tone with simple sentences appropriate for ages 4–10. Include sound effects and playful dialogue.`;
+    // Compose a rich prompt incorporating all chosen elements.  The tone, villain and item will
+    // influence the narrative to yield a unique adventure.  We ask for a short comic story
+    // with playful language and sound effects to engage young readers.
+    const prompt = `Create a short children\'s comic story (around 150 words) featuring a ${selections.hero} and a ${selections.sidekick} who go on a mission to ${selections.mission.toLowerCase()} in a ${selections.setting.toLowerCase()}. The story should have a ${selections.tone.toLowerCase()} tone, and the heroes must overcome a ${selections.villain.toLowerCase()} using a ${selections.item.toLowerCase()}. Write in a fun, conversational style with simple sentences appropriate for ages 4–10, and include sound effects and playful dialogue.`;
     try {
       // Chat completion
       const chatRes = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -423,7 +455,7 @@ function initStoryPage() {
       const story = chatData.choices[0].message.content.trim();
       storyOut.textContent = story;
       // Image generation with description
-      const imgPrompt = `A colourful comic-style illustration of a ${selections.hero.toLowerCase()} and a ${selections.sidekick.toLowerCase()} on a mission to ${selections.mission.toLowerCase()} in a ${selections.setting.toLowerCase()}, cute and whimsical, for a children\'s book.`;
+      const imgPrompt = `A colourful comic-style illustration of a ${selections.hero.toLowerCase()} and a ${selections.sidekick.toLowerCase()} on a mission to ${selections.mission.toLowerCase()} in a ${selections.setting.toLowerCase()}, with a ${selections.tone.toLowerCase()} mood. They are facing a ${selections.villain.toLowerCase()} and using a ${selections.item.toLowerCase()}. The style should be cute and whimsical, like a children\'s comic book.`;
       const imgRes = await fetch('https://api.openai.com/v1/images/generations', {
         method: 'POST',
         headers: {

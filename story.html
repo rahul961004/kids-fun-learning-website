@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Story Adventure – Kids Fun</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Story Builder – Kids Fun Learning Adventures</title>
+    <!-- Use the global stylesheet -->
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
+  <body data-page="story">
     <header>
-      <h1>Kids Fun Learning Adventures</h1>
+      <h1>Kids Fun Learning Adventures</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -20,18 +21,19 @@
         </ul>
       </nav>
     </header>
-    <main class="container">
-      <h2>Story Adventure</h2>
-      <p>Choose your path in our magical story!</p>
-      <div class="story-container">
-        <div id="story-text" class="question"></div>
-        <div id="story-options"></div>
-      </div>
+    <main class="activity-container">
+      <h2>Story Builder</h2>
+      <p>Create your very own comic adventure by selecting options. When done, AI will bring your story to life!</p>
+      <!-- The story-builder container will be populated by the script -->
+      <div id="story-builder"></div>
+      <div class="story-output" id="story-text"></div>
+      <img id="story-image" alt="Comic illustration" style="max-width:100%;margin-top:0.5rem;border-radius:4px;" />
+      <p id="story-feedback" style="margin-top:0.5rem;"></p>
     </main>
-    <footer class="footer">
+    <footer>
       © 2025 Kids Fun Learning Adventures. Let imagination guide the way!
     </footer>
-    <!-- Append a query string to the script to bypass aggressive caching on GitHub Pages -->
-    <script src="script.js?v=2"></script>
+    <!-- Load main script -->
+    <script src="scripts/main.js"></script>
   </body>
 </html>

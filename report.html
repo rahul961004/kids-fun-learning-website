@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parent Report – Kids Fun</title>
-    <link rel="stylesheet" href="./style.css" />
-    <!-- Chart.js library for visualising metrics -->
+    <title>Parent Report – Kids Fun Learning Adventures</title>
+    <!-- Use the global stylesheet -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- Chart.js via CDN for visualising metrics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body>
+  <body data-page="report">
     <header>
-      <h1>Kids Fun Learning Adventures</h1>
+      <h1>Kids Fun Learning Adventures</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -22,31 +23,22 @@
         </ul>
       </nav>
     </header>
-    <main class="container">
+    <main class="activity-container">
       <h2>Parent Report</h2>
-      <p>
-        See how your child engages with our activities and get personalised
-        suggestions.
-      </p>
-      <div id="report-content"></div>
-      <canvas id="metrics-chart" width="400" height="300"></canvas>
-      <section class="ai-section">
-        <h3>AI Insights (optional)</h3>
-        <p>
-          Enter your OpenAI API key to generate a personalised analysis. Your
-          key will only be used in your browser and never sent to our servers.
-        </p>
-        <input id="api-key-input" type="password" placeholder="Your API key" />
-        <button id="generate-insights-btn" class="btn-primary">Generate
-          Insights</button>
-        <div id="ai-insights-output" style="margin-top: 1rem;"></div>
-      </section>
+      <p>See how your child engages with our activities and get personalised suggestions.</p>
+      <table>
+        <thead>
+          <tr><th>Activity</th><th>Metric</th><th>Value</th></tr>
+        </thead>
+        <tbody id="report-body"></tbody>
+      </table>
+      <p id="report-suggestions"></p>
+      <canvas id="metrics-chart" width="400" height="250"></canvas>
     </main>
-    <footer class="footer">
-      © 2025 Kids Fun Learning Adventures. Your child’s data stays on your
-      device only.
+    <footer>
+      © 2025 Kids Fun Learning Adventures. Let’s grow together!
     </footer>
-<!-- Append a query string to the script to bypass aggressive caching on GitHub Pages -->
-<script src="script.js?v=2"></script>
+    <!-- Load main script -->
+    <script src="scripts/main.js"></script>
   </body>
 </html>
