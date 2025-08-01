@@ -25,21 +25,17 @@
       <h2>Drawing Studio</h2>
       <p>Unleash your creativity with colours and brushes!</p>
       <div class="controls">
-        <label>Colour: <input type="color" id="colour-picker" value="#e67e22" /></label>
-        <label>Brush size: <input type="range" id="brush-size" min="1" max="30" value="5" /></label>
-        <button id="clear-btn">Clear</button>
-        <button id="download-btn">Download</button>
+        <label>Colour: <input type="color" id="drawing-colour" value="#e67e22" /></label>
+        <label>Brush size: <input type="range" id="drawing-size" min="1" max="30" value="5" /></label>
+        <button id="drawing-clear">Clear</button>
+        <button id="drawing-download">Download</button>
       </div>
       <!-- Canvas for drawing -->
       <canvas id="drawing-canvas" width="800" height="400"></canvas>
-      <!-- AI transformation section -->
+      <!-- Info message for AI functionality -->
       <div class="ai-section">
-        <h3>Transform Art with AI</h3>
-        <p>Upload your drawing or use your current artwork to generate a real-life image:</p>
-        <label>Upload image: <input type="file" id="upload-input" accept="image/*" /></label>
-        <button id="generate-btn">Generate Image</button>
-        <p id="ai-feedback"></p>
-        <img id="ai-result" alt="AI generated result" />
+        <h3>AI Art Coming Soon</h3>
+        <p>In a future update, this page will transform your drawings into realistic images using our AI tools.</p>
       </div>
     </main>
     <footer>
@@ -47,6 +43,6 @@
     </footer>
     <!-- Load main script -->
     <!-- Bust cache by appending version string -->
-    <script src="scripts/main.js?v=4"></script>
+    <script src="main.js?v=6"></script>
   </body>
 </html>
