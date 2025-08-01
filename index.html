@@ -1,107 +1,67 @@
 <!DOCTYPE html>
-<!--
-  Updated home page for the Kids Fun Learning Adventures site.
-
-  This version refines the layout and styling to make the
-  experience more engaging for young learners. It incorporates
-  research‑driven UX principles such as bright colours, large
-  typography, generous white space and friendly illustrations【60524424161455†L155-L164】.  
-  The content is organised into two columns on larger screens so
-  that the hero illustration and welcome text sit side by side.
--->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kids Fun Learning Adventures</title>
-    <!-- Import a playful font for headings and body text -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="home">
-    <!-- Primary navigation -->
-    <nav>
-      <h1>Kids Fun</h1>
-      <ul>
-        <li><a href="index.html" aria-label="Go to the home page">Home</a></li>
-        <li><a href="math.html" aria-label="Go to the math adventure">Math</a></li>
-        <li><a href="story.html" aria-label="Go to the story adventure">Story</a></li>
-        <li><a href="drawing.html" aria-label="Go to the drawing studio">Drawing</a></li>
-        <li><a href="imagination.html" aria-label="Go to the imagination explorer">Imagination</a></li>
-        <li><a href="report.html" aria-label="Go to the parent report">Report</a></li>
-      </ul>
-    </nav>
-    <!-- Hero section introduces the site with a friendly robot illustration -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
+  <body>
+    <header>
+      <h1>Kids Fun Learning Adventures</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="math.html">Math</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="drawing.html">Drawing</a></li>
+          <li><a href="imagination.html">Imagination</a></li>
+          <li><a href="report.html">Report</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
           <h2>Welcome, Little Explorer!</h2>
           <p>
             Join our fun adventures! Play math games, choose your own story,
-            draw freely and discover your talents.
+            unleash your creativity and dream up magical tales. Learning has
+            never been so much fun!
           </p>
-          <a href="math.html" class="btn">Start Math Adventure</a>
+          <p>
+            <a href="math.html" class="btn-primary">Start Math Adventure</a>
+          </p>
         </div>
-        <div class="hero-image">
-          <img
-            src="hero_robot.png"
-            alt="Friendly robot waving hello"
-            id="hero-img"
-          />
+        <img src="hero.png" alt="Imaginative illustration of playful robots and dragons" />
+      </section>
+      <section class="features">
+        <div class="card">
+          <img src="math_icon.png" alt="Math icon" />
+          <h3>Math Adventure</h3>
+          <p>Solve addition, subtraction and more. Earn stars for every correct answer!</p>
         </div>
-      </div>
-    </section>
-    <!-- Introductory text about the purpose of the site -->
-    <div class="container intro">
-      <p>
-        This website is designed by experienced childhood educators to support
-        learning through play. Each section offers a different way to learn and
-        grow. Use the navigation above to explore!
-      </p>
-    </div>
-
-    <!-- Category selector inspired by educational portals like Starfall.  
-         Each card visually represents a different section of the site and
-         invites children to tap or click to begin.  
-         Large icons and clear labels help young users navigate with ease. -->
-    <section class="categories">
-      <h3>Choose Your Adventure</h3>
-      <div class="category-grid">
-        <!-- Math card uses a rocket to symbolise taking off into numbers -->
-        <a href="math.html" class="category-card" aria-label="Go to the math adventure">
-          <img src="spaceship.png" alt="Rocket flying through space" />
-          <span>Math</span>
-        </a>
-        <!-- Story card uses a castle to evoke fairy tales and imagination -->
-        <a href="story.html" class="category-card" aria-label="Go to the story adventure">
-          <img src="castle.png" alt="Magical castle with flags" />
-          <span>Story</span>
-        </a>
-        <!-- Drawing card uses a paint palette to indicate creativity; reuse existing easel image for now -->
-        <a href="drawing.html" class="category-card" aria-label="Go to the drawing studio">
-          <img src="easel.png" alt="Art easel with paints" />
-          <span>Drawing</span>
-        </a>
-        <!-- Imagination card uses a unicorn to spark wonder and encourage creative story generation -->
-        <a href="imagination.html" class="category-card" aria-label="Go to the imagination explorer">
-          <img src="unicorn.png" alt="Smiling unicorn with rainbow mane" />
-          <span>Imagination</span>
-        </a>
-      </div>
-    </section>
+        <div class="card">
+          <img src="story_icon.png" alt="Story icon" />
+          <h3>Story Adventure</h3>
+          <p>Choose your own path through a magical tale. Where will your choices lead?</p>
+        </div>
+        <div class="card">
+          <img src="drawing_icon.png" alt="Drawing icon" />
+          <h3>Drawing Studio</h3>
+          <p>Pick colours and brushes, create art, then download your masterpiece.</p>
+        </div>
+        <div class="card">
+          <img src="imagination_icon.png" alt="Imagination icon" />
+          <h3>Imagination Explorer</h3>
+          <p>Mix and match characters, settings and activities to craft your own story.</p>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
-      <p>
-        © 2025 Kids Fun Learning Adventures. Designed for children aged 4‑10.
-        Please explore together with a parent or guardian.
-      </p>
+      © 2025 Kids Fun Learning Adventures. Designed for children aged 4‑10.
+      Please explore together with a parent or guardian.
     </footer>
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", initHomePage);
-    </script>
   </body>
 </html>

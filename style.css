@@ -1,455 +1,252 @@
-/*
- * Custom stylesheet for the Kids Fun Learning Adventures website.
- *
- * This file defines a playful colour palette, uses a friendly
- * handwritten‑style font and includes responsive layouts for
- * different screen sizes. The design draws on best practices for
- * children’s UX: bright, vivid colours【505690382823338†L123-L135】, clear navigation, large
- * interactive targets and ample whitespace to avoid clutter【60524424161455†L150-L168】.
- */
-
-/* CSS Variables for easy theming */
+/* Theme colours and layout for Kids Fun Learning Adventures */
 :root {
-  --primary: #4fc3f7;      /* sky blue */
-  --secondary: #ffb74d;    /* warm orange */
-  --accent: #81c784;       /* soft green */
-  --danger: #f06292;       /* playful pink */
-  --text-color: #004d40;   /* dark teal for legibility */
-  --font-heading: 'Baloo 2', 'Comic Sans MS', sans-serif;
-  --font-body: 'Baloo 2', 'Comic Sans MS', sans-serif;
+  /* Theme colours inspired by a playful, imaginative world */
+  --primary-color: #6a0dad; /* purple for creativity */
+  --secondary-color: #f48fb1; /* pink accent */
+  --accent-color: #ffd54f; /* golden yellow for highlights */
+  --bg-color: #fef8ff; /* very light purple background */
+  --text-color: #333333; /* dark grey for readability */
 }
 
-/* Reset and base styles */
-*, *::before, *::after {
+* {
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   margin: 0;
-  padding: 0;
-  font-family: var(--font-body);
-  line-height: 1.5;
-  scroll-behavior: smooth;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-/* Navigation bar */
-nav {
-  background: var(--primary);
+header {
+  background-color: var(--primary-color);
   color: #ffffff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
 }
 
-nav h1 {
+header h1 {
   margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: var(--font-heading);
+  font-size: 1.8rem;
+}
+
+nav {
+  margin-top: 0.5rem;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
   margin: 0;
   padding: 0;
+  gap: 0.5rem;
+}
+
+nav li {
+  margin: 0;
 }
 
 nav a {
+  display: block;
+  padding: 0.5rem 1rem;
   color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.2s ease;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
 nav a:hover,
-nav a[aria-current="page"] {
-  background: rgba(255, 255, 255, 0.2);
+nav a.active {
+  background-color: var(--secondary-color);
 }
 
-/* Hero section */
 .hero {
-  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.hero img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.hero-text {
   flex: 1 1 300px;
-  min-width: 250px;
 }
 
-.hero-text h2 {
-  margin: 0 0 10px;
-  font-size: 2.2rem;
-  color: var(--primary);
-  font-family: var(--font-heading);
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
 }
 
-.hero-text p {
-  margin: 0 0 20px;
-  font-size: 1.1rem;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-.hero-image {
-  flex: 1 1 300px;
-  text-align: center;
-}
-
-.hero-image img {
-  max-width: 300px;
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-  /* Make the hero illustrations gently float to add a sense of magic */
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Animated floating effect for hero illustrations */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* Buttons */
-.btn {
-  background: var(--secondary);
-  color: #ffffff;
+.btn-primary {
+  background-color: var(--accent-color);
   border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: var(--font-heading);
+  transition: background-color 0.2s ease;
 }
 
-.btn:hover {
-  background: #ffa726;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+.btn-primary:hover {
+  background-color: #ffc107;
 }
 
-    /* Imagination Explorer styles */
-    body.imagination {
-      /* Soft gradient background shifting through blue and purple hues */
-      background: linear-gradient(135deg, #d1c4e9, #bbdefb);
-      background-size: 200% 200%;
-      animation: gradientShift 12s ease infinite;
-    }
-
-    .options-section {
-      margin: 20px auto;
-      text-align: center;
-    }
-    .options-section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    .option-grid {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .option-card {
-      background: #ffffff;
-      border: 3px solid transparent;
-      border-radius: 16px;
-      padding: 10px;
-      width: 120px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-      cursor: pointer;
-      transition: transform 0.15s ease, border-color 0.2s ease;
-    }
-    .option-card img {
-      max-width: 100%;
-      display: block;
-      margin: auto;
-    }
-    .option-card.selected {
-      border-color: var(--secondary);
-      transform: translateY(-4px);
-    }
-    #generated-story {
-      font-size: 1.2rem;
-      margin-top: 20px;
-      font-weight: 500;
-    }
-
-/* Containers & cards */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-.intro {
-  font-size: 1rem;
-  text-align: center;
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem;
 }
 
 .card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
   text-align: center;
+  transition: transform 0.2s ease;
 }
 
-/* Inputs and controls */
-input[type="number"],
-input[type="text"] {
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 2px solid var(--primary);
-  margin: 0 10px 10px 0;
-  font-size: 1rem;
-  width: 100px;
+.card:hover {
+  transform: translateY(-3px);
 }
 
-input[type="color"] {
-  border: none;
-  background: none;
-  padding: 4px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }
 
-input[type="range"] {
-  width: 150px;
+.card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
 }
 
-/* Math question & result message */
-#math-question {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: var(--text-color);
+.card p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
 }
 
-.result-message {
-  font-weight: 600;
-  margin-top: 10px;
+.container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Story choices */
-.story-choices {
+.question {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.result {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.scoreboard {
+  margin-top: 1rem;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+/* Controls for drawing page */
+.controls {
+  display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.story-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.story-image:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Story text and options */
-#story-text {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  text-align: center;
-  min-height: 80px;
-}
-
-#story-options button {
-  margin: 8px;
-}
-
-/* Drawing controls and canvas */
-.drawing-controls {
+.controls label {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+}
+
+canvas {
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.options-group {
+  margin-bottom: 2rem;
+}
+
+.options-group h3 {
+  margin-bottom: 0.5rem;
+}
+
+.options {
+  display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
-  justify-content: center;
+  gap: 0.5rem;
 }
 
-#drawing-canvas {
-  border: 4px solid var(--primary);
-  background: #ffffff;
-  border-radius: 15px;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.options .card {
+  cursor: pointer;
+  padding: 0.75rem;
+  flex: 1 1 120px;
 }
 
-/* Report card */
-.report-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+.options .card.selected {
+  background-color: var(--secondary-color);
+  color: #ffffff;
 }
 
-.report-card h3 {
-  margin-top: 0;
-  color: var(--primary);
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
 }
 
-/* Footer */
+.report-table th,
+.report-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.report-table th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.ai-section {
+  margin-top: 2rem;
+}
+
+.ai-section input {
+  padding: 0.5rem;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
 .footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-/* Home page categories grid */
-.categories {
-  margin: 40px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.categories h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: var(--primary);
-  font-family: var(--font-heading);
-}
-
-.category-grid {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.category-card {
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-decoration: none;
-  color: var(--text-color);
-  flex: 1 1 200px;
-  max-width: 220px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.category-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  display: block;
-}
-
-.category-card span {
-  display: block;
-  padding: 12px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: var(--font-heading);
-}
-
-.category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Page specific backgrounds */
-body.home {
-  background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
-}
-
-body.math {
-  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
-}
-
-body.story {
-  background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
-}
-
-body.drawing {
-  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
-}
-
-body.report {
-  background: linear-gradient(135deg, #EDE7F6 0%, #D1C4E9 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 12s ease infinite;
-}
-
-/* Animate background gradients to create a dynamic, futuristic feel */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  nav h1 {
-    font-size: 1.6rem;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  .hero-content {
-    flex-direction: column;
-  }
-  .hero-image img {
-    width: 60%;
-  }
+  padding: 1.5rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  margin-top: 3rem;
 }

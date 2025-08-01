@@ -1,62 +1,51 @@
 <!DOCTYPE html>
-<!--
-  Updated parent report page. The report provides feedback on
-  the child's engagement with different activities. A softer
-  colour palette and friendly header reassure parents while
-  presenting useful information. Accessibility attributes are
-  included for clarity【60524424161455†L188-L201】.
--->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parent Report</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Parent Report – Kids Fun</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Chart.js library for visualising metrics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body class="report">
-    <nav>
-      <h1>Kids Fun</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="math.html">Math</a></li>
-        <li><a href="story.html">Story</a></li>
-        <li><a href="drawing.html">Drawing</a></li>
-        <li><a href="imagination.html">Imagination</a></li>
-        <li><a href="report.html" aria-current="page">Report</a></li>
-      </ul>
-    </nav>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h2>Parent Report</h2>
-          <p>
-            See how your child engages with our activities and get personalised
-            suggestions.
-          </p>
-        </div>
-        <div class="hero-image">
-          <!-- Use root-level path for the robot illustration on GitHub Pages -->
-          <img src="hero_robot.png" alt="Report helper robot" />
-        </div>
-      </div>
-    </section>
-    <div class="container">
-      <div id="report-content" class="report-card"></div>
-    </div>
-    <footer class="footer">
+  <body>
+    <header>
+      <h1>Kids Fun Learning Adventures</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="math.html">Math</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="drawing.html">Drawing</a></li>
+          <li><a href="imagination.html">Imagination</a></li>
+          <li><a href="report.html" class="active">Report</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <h2>Parent Report</h2>
       <p>
-        © 2025 Kids Fun Learning Adventures. Your child’s data stays on your
-        device only.
+        See how your child engages with our activities and get personalised
+        suggestions.
       </p>
+      <div id="report-content"></div>
+      <canvas id="metrics-chart" width="400" height="300"></canvas>
+      <section class="ai-section">
+        <h3>AI Insights (optional)</h3>
+        <p>
+          Enter your OpenAI API key to generate a personalised analysis. Your
+          key will only be used in your browser and never sent to our servers.
+        </p>
+        <input id="api-key-input" type="password" placeholder="Your API key" />
+        <button id="generate-insights-btn" class="btn-primary">Generate
+          Insights</button>
+        <div id="ai-insights-output" style="margin-top: 1rem;"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      © 2025 Kids Fun Learning Adventures. Your child’s data stays on your
+      device only.
     </footer>
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", initReportPage);
-    </script>
   </body>
 </html>
