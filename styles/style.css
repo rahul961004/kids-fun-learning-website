@@ -107,6 +107,9 @@ main {
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
+  /* Allow cards to be anchors without underlines or colour changes */
+  text-decoration: none;
+  color: inherit;
 }
 
 .card:hover {
@@ -236,6 +239,12 @@ th {
 
 .story-options button {
   flex: 1 1 120px;
+}
+
+/* Highlight selected choice in imagination and story builder */
+.story-options button.selected {
+  background-color: #f48fb1;
+  color: #ffffff;
 }
 
 .story-output {
